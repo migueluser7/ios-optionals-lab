@@ -9,12 +9,16 @@ a. Given the variable `userNameOne` below, print *"The username is Test User"*. 
 
 ```swift
 var userNameOne: String? = "Test User"
+
+if let name = userNameOne { print("The username is \(name)")}
 ```
 
 b. Given the variable `userNameTwo` below, print *"The username is undefined"*.  Use the *nil coalescing operator* (`??`).
 
 ```swift
 var userNameTwo: String? = nil
+
+print("The username is \(userNameTwo ?? "undefined")")
 ```
 
 ## Question 2
