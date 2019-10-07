@@ -60,7 +60,10 @@ var userOneName: String? = "Anne"
 var userOneAge: Int? = 15
 var userOneHeight: Double? = 70
 
-
+if let nam = userOneName, let age = userOneAge, let hit = userOneHeight {
+    let hit2 = String(format: "%.1f", hit / 12)
+    print("Hello \(nam)! You are \(age) years old and \(hit2) feet tall")
+}
 ```
 
 b. Given the variables `userTwoName`, `userTwoAge` and `userTwoHeight` below, write code that prints "Hello user!  You are 15 years old and I don't know how tall you are".  Use optional binding
@@ -69,6 +72,13 @@ b. Given the variables `userTwoName`, `userTwoAge` and `userTwoHeight` below, wr
 var userTwoName: String? = nil
 var userTwoAge: Int? = 15
 var userTwoHeight: Double? = nil
+
+if var name = userTwoName {print("Hello \(name)!", terminator: "")}else{print("Hello user! ", terminator:"")}
+
+if var age = userTwoAge {print("You are \(age) years old ", terminator: "")}else{print("no age", terminator:"")}
+
+if var h = userTwoHeight {print("and you are \(h) tall", terminator: "")}else{print("and I don't know how tall you are", terminator:"")}
+
 ```
 
 
@@ -80,6 +90,8 @@ Give the variable `favoriteNumber`, write code that either prints "Your favorite
 
 ```swift
 var favoriteNumber = Bool.random() ? Int.random(in: 0...10) : nil
+
+if var fn = favoriteNumber { print("Your favorite number is \(fn)")} else { print("I don't know what your favorite number is")}
 ```
 
 
@@ -92,6 +104,12 @@ Given the variables `numOne`, `numTwo` and `numThree`, write code that prints "T
 var numOne = Bool.random() ? Int.random(in: 0...10) : nil
 var numTwo = Bool.random() ? Int.random(in: 0...10) : nil
 var numThree = Bool.random() ? Int.random(in: 0...10) : nil
+
+var total = 0
+if var n1 = numOne { total += n1 }
+if var n2 = numTwo { total += n2}
+if var n3 = numThree { total += n3}
+print("The sum of all numbers is \(total))
 ```
 
 ## Question 6
@@ -100,13 +118,34 @@ a. Given the variable `numbers` below, write code that prints "The sum of all th
 
 ```swift
 var numbers = [Int?]()
-
+var sum = 0
 for _ in 0..<10 {
     numbers.append(Bool.random() ? Int.random(in: 0...100) : nil)
-}
+        }
+        
+        for num in numbers{
+               if let validNum = num {
+                   sum += validNum
+               }
+    print(sum)
+
 ```
 
 b. Using the same variable, find the average of all non-nil values.
+
+var numbers = [Int?]()
+var sum = 0
+var div = 0
+for _ in 0..<10 {
+    numbers.append(Bool.random() ? Int.random(in: 0...100) : nil)
+        }
+        
+        for num in numbers{
+               if let validNum = num {
+                   sum += validNum
+                div += 1
+            } }
+print(sum); print(sum / div)
 
 ## Extra Questions
 
