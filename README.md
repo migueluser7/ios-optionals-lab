@@ -28,6 +28,11 @@ a. Given the variables `rectOneWidth` and `rectOneHeight` below, print "The area
 ```swift
 var rectOneWidth: Double? = 5
 var rectOneHeight: Double? = 10
+
+if let rw = rectOneWidth, let rh = rectOneHeight
+{
+    print("The area of rectOne is \(Int(rw * rh))")
+}
 ```
 
 b. Given the variables `rectTwoWidth` and `rectTwoHeight` below, print "The are of rectTwo is not able to be calculated".  Use *Optional Binding* (`if let`) to print this message.
