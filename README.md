@@ -40,6 +40,14 @@ b. Given the variables `rectTwoWidth` and `rectTwoHeight` below, print "The are 
 ```swift
 var rectTwoWidth: Double? = nil
 var rectTwoHeight: Double? = nil
+
+if let rw = rectTwoWidth, let rh = rectTwoHeight
+{
+    print("The area of rectTwo is \(Int(rw * rh))")
+}
+else {
+    print("The area of rectTwo is not able to be calculated")
+}
 ```
 
 ## Question 3
@@ -51,6 +59,8 @@ a. Given the variables `userOneName`, `userOneAge`, and `userOneHeight` below, w
 var userOneName: String? = "Anne"
 var userOneAge: Int? = 15
 var userOneHeight: Double? = 70
+
+
 ```
 
 b. Given the variables `userTwoName`, `userTwoAge` and `userTwoHeight` below, write code that prints "Hello user!  You are 15 years old and I don't know how tall you are".  Use optional binding
